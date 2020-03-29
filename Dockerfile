@@ -1,3 +1,5 @@
 FROM python:3.7
 
-CMD ["python", "--version"]
+COPY ./script.py /script.py
+
+CMD ["python", "/script.py"]
