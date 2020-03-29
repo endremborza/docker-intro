@@ -1,7 +1,9 @@
-import pandas as pd
+from flask import Flask
+app = Flask(__name__)
 
-df = pd.DataFrame({"A": range(5), "B": range(1,6)})
+@app.route('/hello')
+def hello():
+    return '<h2>Hello from the container!</h2>'
 
-print("I can print a dataframe!")
-
-print(df)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5432)
